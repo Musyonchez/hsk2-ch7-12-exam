@@ -40,20 +40,20 @@ export default function CharacterReference() {
         </p>
       </header>
 
-      <nav className="sticky top-0 z-10 mb-1.5 border-b border-border bg-bg py-3">
+      <nav className="sticky top-11 z-10 mb-1.5 border-b border-border bg-bg py-3">
         <div className="flex flex-wrap items-center gap-1.5">
           {CHAPTERS.map((chapter) => (
             <a
               key={chapter.id}
               href={`#${chapter.id}`}
-              className="scroll-mt-16 rounded-full border border-border bg-surface px-[11px] py-[5px] text-[12.5px] font-bold text-ink-soft tabular-nums no-underline hover:border-accent hover:text-accent"
+              className="scroll-mt-[104px] rounded-full border border-border bg-surface px-[11px] py-[5px] text-[12.5px] font-bold text-ink-soft tabular-nums no-underline hover:border-accent hover:text-accent"
             >
               Ch {chapter.num}
             </a>
           ))}
           <a
             href="#appendix"
-            className="scroll-mt-16 rounded-full border border-border bg-surface px-[11px] py-[5px] text-[12.5px] font-bold text-ink-soft no-underline hover:border-accent hover:text-accent"
+            className="scroll-mt-[104px] rounded-full border border-border bg-surface px-[11px] py-[5px] text-[12.5px] font-bold text-ink-soft no-underline hover:border-accent hover:text-accent"
           >
             Appendix
           </a>
@@ -85,7 +85,7 @@ export default function CharacterReference() {
 
       <main>
         {filteredChapters.map((chapter) => (
-          <section key={chapter.id} id={chapter.id} className="mt-8 scroll-mt-16">
+          <section key={chapter.id} id={chapter.id} className="mt-8 scroll-mt-[104px]">
             <div className="mb-2.5 flex items-baseline gap-2.5">
               <span className="font-display rounded-md bg-accent-soft px-[9px] py-0.5 text-[15px] font-bold text-accent tabular-nums">
                 Ch {chapter.num}
@@ -99,10 +99,10 @@ export default function CharacterReference() {
             </div>
 
             <div className="overflow-x-auto rounded-xl border border-border bg-surface shadow-[0_1px_2px_rgba(42,35,32,0.06),0_6px_20px_rgba(42,35,32,0.07)]">
-              <table className="w-full min-w-[480px] border-collapse">
+              <table className="w-full min-w-[760px] border-collapse">
                 <thead>
                   <tr>
-                    {["Char", "Pinyin", "Meaning", "From word"].map((h) => (
+                    {["Char", "Pinyin", "Meaning", "Memory aid", "From word"].map((h) => (
                       <th
                         key={h}
                         className="border-b border-border bg-surface-2 px-3.5 py-2.5 text-left text-[11px] font-bold tracking-[0.06em] text-ink-faint uppercase"
@@ -118,10 +118,10 @@ export default function CharacterReference() {
                       <td className="font-hanzi border-b border-border px-3.5 py-2.5 text-2xl whitespace-nowrap">
                         {r.char}
                       </td>
-                      <td className="font-display border-b border-border px-3.5 py-2.5 text-sm font-semibold whitespace-nowrap text-accent">
+                      <td className="font-sans border-b border-border px-3.5 py-2.5 text-sm font-semibold whitespace-nowrap text-accent">
                         {r.pinyin}
                       </td>
-                      <td className="border-b border-border px-3.5 py-2.5 text-sm text-ink">
+                      <td className="border-b border-border px-3.5 py-2.5 text-sm whitespace-nowrap text-ink">
                         {r.meaning}
                         {r.review && (
                           <span className="ml-1.5 inline-block rounded-full border border-border bg-surface-2 px-1.5 py-px text-[10px] font-bold tracking-[0.04em] text-ink-soft uppercase">
@@ -129,8 +129,12 @@ export default function CharacterReference() {
                           </span>
                         )}
                       </td>
-                      <td className="font-hanzi border-b border-border px-3.5 py-2.5 text-sm whitespace-nowrap text-ink-soft">
-                        {r.word}
+                      <td className="border-b border-border px-3.5 py-2.5 text-[13px] leading-snug text-ink-soft min-w-[260px] max-w-[360px]">
+                        {r.mnemonic}
+                      </td>
+                      <td className="border-b border-border px-3.5 py-2.5 text-sm whitespace-nowrap text-ink-soft">
+                        <span className="font-hanzi">{r.word}</span>{" "}
+                        <span className="font-sans text-xs">({r.wordPinyin})</span>
                       </td>
                     </tr>
                   ))}
@@ -156,7 +160,7 @@ export default function CharacterReference() {
         </Link>
       </div>
 
-      <section id="appendix" className="mt-11 scroll-mt-16 border-t border-dashed border-border-strong pt-5.5">
+      <section id="appendix" className="mt-11 scroll-mt-[104px] border-t border-dashed border-border-strong pt-5.5">
         <h2 className="font-display mb-2 text-lg text-ink">Dialogue-only characters</h2>
         <p className="max-w-[62ch] text-sm leading-relaxed text-ink-soft">
           The Ch7–12 dialogues also use these characters beyond the New Words

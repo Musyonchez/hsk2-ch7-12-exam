@@ -185,15 +185,22 @@ function Study({ pool }: { pool: FlatCharEntry[] }) {
         <div className="text-xs text-ink-faint">
           {flipped ? "click to hide" : "click the character to reveal"}
         </div>
-        <div className="flex min-h-[78px] flex-col items-center gap-1.5 text-center">
+        <div className="flex min-h-[170px] max-w-[400px] flex-col items-center gap-1.5 text-center">
           {flipped && (
             <>
-              <div className="font-display text-[22px] font-semibold text-accent">{item.pinyin}</div>
+              <div className="font-sans text-[22px] font-semibold text-accent">{item.pinyin}</div>
               <div className="text-[15px] text-ink">{item.meaning}</div>
-              <div className="text-xs text-ink-faint tabular-nums">
-                from {item.word} · Chapter {item.chapter}
+              <div className="text-xs text-ink-faint">
+                from <span className="font-hanzi">{item.word}</span> ({item.wordPinyin}) · Chapter{" "}
+                {item.chapter}
               </div>
               {item.review && <ReviewBadge />}
+              <div className="mt-2 rounded-[10px] border border-border bg-surface-2 px-3.5 py-3 text-left text-[13px] leading-snug text-ink-soft">
+                <span className="mb-1 block text-[10.5px] font-bold tracking-[0.06em] text-ink-faint uppercase">
+                  Memory aid
+                </span>
+                {item.mnemonic}
+              </div>
             </>
           )}
         </div>
@@ -348,7 +355,7 @@ function Quiz({ pool }: { pool: FlatCharEntry[] }) {
                     Which character is this?
                   </div>
                   <div className="max-w-[380px] text-xl font-semibold text-ink">{question.item.meaning}</div>
-                  <div className="text-[15px] text-ink-soft">{question.item.pinyin}</div>
+                  <div className="font-sans text-[15px] text-ink-soft">{question.item.pinyin}</div>
                 </div>
               )}
 
