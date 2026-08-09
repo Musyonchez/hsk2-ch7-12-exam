@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f7f3ec;
+  --surface: #ffffff;
+  --surface-2: #fbf8f2;
+  --ink: #2a2320;
+  --ink-soft: #6b5d52;
+  --ink-faint: #a5978a;
+  --accent: #b5482e;
+  --accent-soft: #f1ded5;
+  --border: #ded2c1;
+  --border-strong: #c9baa4;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1b1714;
+    --surface: #24201c;
+    --surface-2: #292420;
+    --ink: #ede6dc;
+    --ink-soft: #b3a79a;
+    --ink-faint: #756a5d;
+    --accent: #e0805e;
+    --accent-soft: #3d2a22;
+    --border: #3a332c;
+    --border-strong: #4a4038;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-faint: var(--ink-faint);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+
+  --font-display: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-hanzi: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", "Heiti SC", sans-serif;
+  --font-sans: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    animation-duration: 0.001ms !important;
+  }
+}
