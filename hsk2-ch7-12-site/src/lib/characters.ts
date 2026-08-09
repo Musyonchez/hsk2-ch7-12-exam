@@ -158,3 +158,9 @@ export const DIALOGUE_ONLY_CHARS =
   "七 三 下 不 东 两 个 中 么 也 习 买 了 二 五 些 京 人 什 今 介 他 以 们 件 休 住 体 作 你 候 做 儿 六 写 冷 准 几 出 分 前 动 北 医 十 午 卖 卫 友 叫 吃 同 后 吗 吧 听 呢 和 哪 啊 喜 喝 回 国 坐 块 备 外 多 大 天 太 她 好 妈 始 姐 字 学 家 对 少 就 岁 工 左 已 师 常 床 开 张 影 很 忙 怎 息 您 想 我 房 打 报 斤 新 方 旁 日 早 明 星 昨 是 晚 有 朋 期 条 来 杯 果 样 桌 次 每 气 汉 没 点 王 现 生 电 病 的 看 真 睡 知 米 累 红 纸 绍 经 给 羊 老 考 肉 脑 色 苹 茶 药 衣 要 见 视 觉 认 识 试 语 请 谁 谢 起 跟 身 运 还 这 道 那 都 钟 长 门 间 非 面 飞 饭 馆";
 
 export const TOTAL_CHARS = CHAPTERS.reduce((sum, c) => sum + c.rows.length, 0);
+
+export type FlatCharEntry = CharEntry & { chapter: number };
+
+export const ALL_CHARS: FlatCharEntry[] = CHAPTERS.flatMap((c) =>
+  c.rows.map((r) => ({ ...r, chapter: c.num }))
+);

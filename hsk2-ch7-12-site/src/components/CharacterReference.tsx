@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import { CHAPTERS, DIALOGUE_ONLY_CHARS, TOTAL_CHARS } from "@/lib/characters";
 
 export default function CharacterReference() {
@@ -31,6 +32,11 @@ export default function CharacterReference() {
         <p className="mt-1 max-w-[62ch] text-[14.5px] leading-relaxed text-ink-soft">
           All {TOTAL_CHARS} characters from the New Words tables, grouped by
           chapter, with pinyin, meaning, and the word they come from.
+          Companion to the{" "}
+          <Link href="/drill" className="underline decoration-border-strong hover:decoration-accent">
+            flashcard &amp; quiz drill
+          </Link>
+          .
         </p>
       </header>
 
@@ -140,6 +146,15 @@ export default function CharacterReference() {
           </p>
         )}
       </main>
+
+      <div className="mt-8 mb-1.5 flex justify-center">
+        <Link
+          href="/drill"
+          className="inline-flex items-center gap-2 rounded-[10px] bg-accent px-5 py-[11px] text-sm font-bold text-[#FBF3EE] shadow-[0_1px_2px_rgba(42,35,32,0.06),0_6px_20px_rgba(42,35,32,0.07)]"
+        >
+          Practice these in the quiz drill →
+        </Link>
+      </div>
 
       <section id="appendix" className="mt-11 scroll-mt-16 border-t border-dashed border-border-strong pt-5.5">
         <h2 className="font-display mb-2 text-lg text-ink">Dialogue-only characters</h2>

@@ -9,8 +9,13 @@
   --ink-faint: #a5978a;
   --accent: #b5482e;
   --accent-soft: #f1ded5;
+  --good: #4b7355;
+  --good-soft: #dce9de;
+  --bad: #a83a3a;
+  --bad-soft: #f2dbdb;
   --border: #ded2c1;
   --border-strong: #c9baa4;
+  --grid: #e4d6c3;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,8 +28,13 @@
     --ink-faint: #756a5d;
     --accent: #e0805e;
     --accent-soft: #3d2a22;
+    --good: #7fb68c;
+    --good-soft: #2a3a2c;
+    --bad: #e08787;
+    --bad-soft: #3e2626;
     --border: #3a332c;
     --border-strong: #4a4038;
+    --grid: #362f27;
   }
 }
 
@@ -37,8 +47,13 @@
   --color-ink-faint: var(--ink-faint);
   --color-accent: var(--accent);
   --color-accent-soft: var(--accent-soft);
+  --color-good: var(--good);
+  --color-good-soft: var(--good-soft);
+  --color-bad: var(--bad);
+  --color-bad-soft: var(--bad-soft);
   --color-border: var(--border);
   --color-border-strong: var(--border-strong);
+  --color-grid: var(--grid);
 
   --font-display: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
   --font-hanzi: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", "Heiti SC", sans-serif;
